@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <h2 class="text-center">Thông tin sinh viên</h2>
+    <div class="content-main d-flex">
+      <div class="thumb pe-3">
+        <img src="assets/images/{{ student.img }}" alt="thumb poly" />
+      </div>
+      <ul class="infomation pt-5">
+        <li><span>Họ Tên:</span> {{ student.fullname }}</li>
+        <li><span>Tuổi:</span> {{ student.age }}</li>
+        <li><span>Giới tính:</span> {{ student.sex }}</li>
+        <li><span>Ngày sinh:</span> {{ student.birth }}</li>
+        <li><span>Điểm TB:</span> {{ student.point }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
