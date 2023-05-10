@@ -1,0 +1,9 @@
+table {
+  width: 100%;
+}
+td img {
+  width: 3rem;
+}
+.crop {
+  overflow: hidden;
+}
