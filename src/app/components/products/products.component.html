@@ -10,7 +10,9 @@
       (input)="filterProducts()"
     />
   </div>
-  <h2 class="mt-3 px-4">Filter by:</h2>
+  <h2 class="mt-3 px-4">
+    Filter by: <small>{{ message }}</small>
+  </h2>
   <table class="table border rounded shadow bg-light my-3 p-0">
     <thead>
       <tr>
@@ -39,19 +41,10 @@
         <td>{{ item.releaseDate }}</td>
         <td>{{ item.price }}</td>
         <td>
-          <div
-            class="crop"
-            [style.width.px]="(item.starRating * 90) / 5"
-            title="rating"
-          >
-            <div style="width: 90px">
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-            </div>
-          </div>
+          <app-star
+            [rating]="item.starRating"
+            (ratingClicked)="onRatingClicked($event)"
+          ></app-star>
         </td>
       </tr>
     </tbody>

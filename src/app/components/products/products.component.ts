@@ -7,6 +7,7 @@ import { IProduct } from './products';
 })
 export class ProductsComponent {
   isHidden = false;
+  message: string = '';
 
   products: IProduct[] = [
     {
@@ -91,5 +92,9 @@ export class ProductsComponent {
   }
   hideShow() {
     this.isHidden = !this.isHidden;
+  }
+  onRatingClicked(message: string) {
+    this.message = message;
+    console.log(message);
   }
 }
