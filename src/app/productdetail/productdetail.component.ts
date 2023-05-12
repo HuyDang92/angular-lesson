@@ -2,14 +2,11 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IProduct } from './products';
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css'],
+  selector: 'app-productdetail',
+  templateUrl: './productdetail.component.html',
+  styleUrls: ['./productdetail.component.css'],
 })
-export class ProductsComponent {
-  isHidden = false;
-  message: string = '';
-
+export class ProductdetailComponent {
   products: IProduct[] = [
     {
       productId: 1,
@@ -68,37 +65,12 @@ export class ProductsComponent {
     },
   ];
   product: any;
-  filteredProducts: IProduct[];
-  constructor(private route: ActivatedRoute) {
-    this.filteredProducts = this.products;
-  }
-  private _filterValue: string = '';
-
-  get filterValue(): string {
-    return this._filterValue;
-  }
-
-  set filterValue(value: string) {
-    this._filterValue = value;
-    this.filterProducts();
-  }
-
+  constructor(private route: ActivatedRoute) {}
   ngOnInit() {
-    this.filteredProducts = this.products;
     let id = +this.route.snapshot.params['id'];
+    console.log(id);
+
     this.product = this.products.find((p) => p.productId === id);
   }
-
-  filterProducts() {
-    this.filteredProducts = this.products.filter((p) =>
-      p.productName.toLowerCase().includes(this.filterValue.toLowerCase())
-    );
-  }
-  hideShow() {
-    this.isHidden = !this.isHidden;
-  }
-  onRatingClicked(message: string) {
-    this.message = message;
-    console.log(message);
-  }
+  onBack() {}
 }

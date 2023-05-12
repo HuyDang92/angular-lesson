@@ -36,7 +36,14 @@
         <td>
           <img [hidden]="isHidden" src="{{ item.imageUrl }}" alt="" />
         </td>
-        <td>{{ item.productName }}</td>
+        <td>
+          <a
+            [routerLink]="['/product', item.productId]"
+            routerLinkActive="router-link-active"
+          >
+            {{ item.productName }}
+          </a>
+        </td>
         <td>{{ item.productCode }}</td>
         <td>{{ item.releaseDate }}</td>
         <td>{{ item.price }}</td>
