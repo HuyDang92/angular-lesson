@@ -11,7 +11,7 @@ export class Lesson2Component {
     age: 20,
     sex: 'Nam',
     birth: '09/02/2003',
-    img: 'poly.png',
+    img: 'avt.jpg',
     point: 9.0,
   };
 }

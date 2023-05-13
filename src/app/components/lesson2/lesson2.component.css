@@ -2,6 +2,11 @@
 .infomation span {
   font-weight: bold;
 }
+.content-main {
+}
 .thumb img {
-  width: 10rem;
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
 }
