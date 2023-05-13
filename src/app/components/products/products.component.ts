@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IProduct } from './products';
 @Component({
@@ -67,6 +67,7 @@ export class ProductsComponent {
         'http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png',
     },
   ];
+
   product: any;
   filteredProducts: IProduct[];
   constructor(private route: ActivatedRoute) {
@@ -74,7 +75,7 @@ export class ProductsComponent {
   }
   private _filterValue: string = '';
 
-  get filterValue(): string {
+  get inputValue(): string {
     return this._filterValue;
   }
 
@@ -91,7 +92,7 @@ export class ProductsComponent {
 
   filterProducts() {
     this.filteredProducts = this.products.filter((p) =>
-      p.productName.toLowerCase().includes(this.filterValue.toLowerCase())
+      p.productName.toLowerCase().includes(this.inputValue.toLowerCase())
     );
   }
   hideShow() {

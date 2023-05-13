@@ -1,5 +1,7 @@
 <div class="container border p-0 mt-3">
-  <h3 class="mt-3 px-4">Product list</h3>
+  <h3 class="mt-3 px-4">
+    <small>{{ message === "" ? "Product List" : message }}</small>
+  </h3>
   <div class="filter d-flex px-4">
     <label class="col-2">Filter:</label>
     <input
@@ -11,7 +13,7 @@
     />
   </div>
   <h2 class="mt-3 px-4">
-    Filter by: <small>{{ message }}</small>
+    Filter by: <span>{{ filterValue }}</span>
   </h2>
   <table class="table border rounded shadow bg-light my-3 p-0">
     <thead>
