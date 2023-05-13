@@ -19,5 +19,6 @@ export class StarComponent implements OnInit {
   ngOnInit(): void {}
   onClicked() {
     this.ratingClicked.emit(`Đánh giá sản phẩm này là ${this.rating} sao!`);
+    console.log(this.starWidth);
   }
 }

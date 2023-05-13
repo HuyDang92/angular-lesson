@@ -1,6 +1,7 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IProduct } from './products';
+import { ICate } from './menu';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -9,6 +10,11 @@ import { IProduct } from './products';
 export class ProductsComponent {
   isHidden = false;
   message: string = '';
+  cates: ICate[] = [
+    { name: 'Danh Mục' },
+    { name: 'Sản phẩm' },
+    { name: 'Người dùng' },
+  ];
 
   products: IProduct[] = [
     {
