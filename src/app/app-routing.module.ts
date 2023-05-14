@@ -1,4 +1,4 @@
-import { ProductdetailComponent } from './productdetail/productdetail.component';
+import { ProductdetailComponent } from './components/productdetail/productdetail.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductsComponent } from './components/products/products.component';
 import { NgModule } from '@angular/core';

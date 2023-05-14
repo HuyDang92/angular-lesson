@@ -4,7 +4,7 @@ import { IProduct } from './products';
 @Component({
   selector: 'app-productdetail',
   templateUrl: './productdetail.component.html',
-  styleUrls: ['./productdetail.component.css'],
+  styleUrls: ['./productdetail.component.scss'],
 })
 export class ProductdetailComponent {
   products: IProduct[] = [
