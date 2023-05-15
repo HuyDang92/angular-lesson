@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css'],
+  styleUrls: ['./signin.component.scss'],
 })
 export class SigninComponent {
   err: string = '';
@@ -22,7 +22,7 @@ export class SigninComponent {
       this.userData.username === 'huy922003' &&
       this.userData.password === '922003'
     ) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/admin/add-product']);
     } else {
       this.err = 'Sai tài khoản mật khẩu!';
       console.log(this.err);

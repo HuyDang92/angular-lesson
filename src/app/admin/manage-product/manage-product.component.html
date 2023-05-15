@@ -1,1 +1,126 @@
-<p>manage-product works!</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="col-4 mt-5">
+      <h3 class="text-center">Thêm sản phẩm</h3>
+      <div class="form-group">
+        <label for="productName">Tên sản phẩm</label>
+        <input
+          type="text"
+          id="productName"
+          class="form-control"
+          formControlName="productName"
+        />
+        <div
+          *ngIf="
+            productForm.controls['productName'].hasError('required') &&
+            productForm.controls['productName'].touched
+          "
+          class="text-danger"
+        >
+          Tên sản phẩm là bắt buộc
+        </div>
+        <div
+          *ngIf="
+            productForm.controls['productName'].hasError('invalidProductName')
+          "
+          class="text-danger"
+        >
+          Tên sản phẩm không hợp lệ
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="productCode">Mã sản phẩm</label>
+        <input
+          type="text"
+          id="productCode"
+          class="form-control"
+          formControlName="productCode"
+        />
+        <div
+          *ngIf="
+            productForm.controls['productCode'].hasError('required') &&
+            productForm.controls['productCode'].touched
+          "
+          class="text-danger"
+        >
+          Mã sản phẩm là bắt buộc
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="des">Mô tả</label>
+        <textarea
+          id="des"
+          class="form-control"
+          formControlName="des"
+        ></textarea>
+        <div
+          *ngIf="
+            productForm.controls['des'].hasError('required') &&
+            productForm.controls['des'].touched
+          "
+          class="text-danger"
+        >
+          Mô tả là bắt buộc
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="price">Giá</label>
+        <input
+          type="number"
+          id="price"
+          class="form-control"
+          formControlName="price"
+        />
+        <div
+          *ngIf="
+            productForm.controls['price'].hasError('required') &&
+            productForm.controls['price'].touched
+          "
+          class="text-danger"
+        >
+          Giá là bắt buộc
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="starRating">Đánh giá sao</label>
+        <input
+          type="number"
+          id="starRating"
+          class="form-control"
+          formControlName="starRating"
+        />
+        <div
+          *ngIf="
+            productForm.controls['starRating'].hasError('required') &&
+            productForm.controls['starRating'].touched
+          "
+          class="text-danger"
+        >
+          Đánh giá sao là bắt buộc
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="imageUrl">URL hình ảnh</label>
+        <input
+          type="text"
+          id="imageUrl"
+          class="form-control"
+          formControlName="imageUrl"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary my-2"
+        [disabled]="productForm.invalid"
+      >
+        Thêm
+      </button>
+    </form>
+  </div>
+</div>

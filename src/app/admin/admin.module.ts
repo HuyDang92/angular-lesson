@@ -5,18 +5,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AdminRoutingModule } from './admin-routing.module';
 import { SigninComponent } from './signin/signin.component';
-import { DividerModule } from 'primeng/divider';
-import { ButtonModule } from 'primeng/button';
-import { InputTextModule } from 'primeng/inputtext';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [DashboardComponent, ManageProductComponent, SigninComponent],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    InputTextModule,
-    ButtonModule,
-    DividerModule,
-    FormsModule,
-  ],
+  imports: [CommonModule, AdminRoutingModule, ReactiveFormsModule, FormsModule],
 })
 export class AdminModule {}
